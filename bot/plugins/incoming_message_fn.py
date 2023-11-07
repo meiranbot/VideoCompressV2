@@ -85,19 +85,9 @@ async def incoming_start_message_f(bot, update):
         chat_id=update.chat.id,
         text=Localisation.START_TEXT,
         reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton('Updates Channel', url='https://t.me/UniversalBotsUpdate')
-                ],
-                [
-                    InlineKeyboardButton('Support Group', url='https://t.me/UniversalBotsSupport')
-                ]
-            ]
-        ),
-        reply_to_message_id=update.message_id,
     )
-    
-async def incoming_compress_message_f(bot, update):
+    return
+    async def incoming_compress_message_f(bot, update):
   """/compress command"""
   update_channel = UPDATES_CHANNEL
   if update_channel:
