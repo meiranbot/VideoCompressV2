@@ -86,8 +86,8 @@ async def incoming_start_message_f(bot, update):
     await bot.send_message(
         chat_id=update.chat.id,
         text=Localisation.START_TEXT,
-        reply_markup=InlineKeyboardMarkup(
-     )
+        reply_markup=InlineKeyboardMarkup)
+    
     async def incoming_compress_message_f(bot, update):
   """/compress command"""
   update_channel = UPDATES_CHANNEL
