@@ -98,10 +98,11 @@ async def incoming_start_message_f(bot, update):
     )
     
 async def incoming_compress_message_f(bot, update):
-  """/compress command"""
-  update_channel = UPDATES_CHANNEL
-  if update_channel:
-      try:
+    """Handle /compress command"""
+    # Check user's status and channel membership
+    if not await check_user_status(bot, update):
+        return
+        
           user = await bot.get_chat_member(update_channel, update.chat.id)
           if user.status == "kicked":
              await bot.send_message(
@@ -409,13 +410,13 @@ async def incoming_compress_message_f(bot, update):
       pass
     
 async def incoming_cancel_message_f(bot, update):
-  """/cancel command"""
-  if update.from_user.id not in AUTH_USERS:
-    try:
-      await update.message.delete()
-    except:
-      pass
-    return
+    """Handle /cancel command"""
+    if update.from_user.id not in AUTH_USERS:
+        try:
+            await update.message.delete()
+        except:
+            pass
+        return
 
   status = DOWNLOAD_LOCATION + "/status.json"
   if os.path.exists(status):
