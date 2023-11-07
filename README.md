@@ -1,3 +1,5 @@
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/meiranbot/VideoCompressV2)
+
 # VideoCompress
 A Telegram Video Compressor Bot By [@Technical-Jigar](https://t.me/Technical_Jigar). **This bot works for all!** No need to define each user IDs to use bot. Also works in Group.
 
